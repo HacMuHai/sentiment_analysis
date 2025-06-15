@@ -26,7 +26,8 @@ df["text"] = df["text"].astype(str)
 def preprocess_tweet(tweet):
     tweet = tweet.lower()
     tweet = tweet.translate(str.maketrans("", "", string.punctuation))
-    tokens = nltk.word_tokenize(tweet)
+    # Use simple split instead of word_tokenize
+    tokens = tweet.split()
     stemmer = PorterStemmer()
     stopwords_set = set(stopwords.words("english"))
     tokens = [stemmer.stem(token) for token in tokens if token not in stopwords_set]
@@ -146,7 +147,9 @@ print("Accuracy:", accuracy)
 
 # Streamlit app
 def main():
-
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    
     # Add a banner image
     banner_image = Image.open("./images/sentimentanalysishotelgeneric-2048x803-1.jpg")  # Replace with your banner image filename
     st.image(banner_image, use_column_width=True)
