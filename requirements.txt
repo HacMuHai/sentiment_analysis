@@ -3,3 +3,5 @@ streamlit
 nltk
 plotly
 scikit-learn
+tensorflow
+Pillow

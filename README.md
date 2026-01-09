@@ -173,10 +173,12 @@ python -m venv Sentiment_NB
 3. To activate the virtual environment, use the following command:
 ```bash
 Sentiment_NB\Scripts\activate
+
+source venv_py311/bin/activate
 ```
 4. Install the required packages from the `requirements.txt` file:
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 5. Run the Streamlit app:
 ```bash
